@@ -47,9 +47,6 @@
 import {mapGetters, mapActions} from 'vuex'
 export default
 {
-    // data: () => ({
-    //     posts: isShow
-    // }),
     mounted() {
         this.axiosGoods()
     },

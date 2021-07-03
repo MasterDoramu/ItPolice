@@ -25,7 +25,7 @@ class GoodSeeder extends Seeder
                 [
                     'title' => 'Мультиварка',
                     'price' => 6000,
-                    'description' => 'скатерть самобранка 21 века',
+                    'description' => 'Скатерть самобранка 21 века',
                     'picture' => 'multi.jpg',
                 ],
                 [
