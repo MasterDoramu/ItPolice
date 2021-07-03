@@ -2053,13 +2053,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  // data: () => ({
+  //     posts: isShow
+  // }),
   mounted: function mounted() {
     this.axiosGoods();
   },
@@ -38282,6 +38280,7 @@ var render = function() {
             "div",
             {
               staticClass: "collapse",
+              class: { show: index == 0 },
               attrs: {
                 id: "num" + good.id,
                 "aria-labelledby": "heading" + good.id,
@@ -38314,28 +38313,27 @@ var render = function() {
             attrs: { id: "carouselExampleSlidesOnly", "data-ride": "carousel" }
           },
           [
-            _c("div", { staticClass: "carousel-inner" }, [
-              _c("div", { staticClass: "carousel-item active" }, [
-                _c("img", {
-                  staticClass: "d-block w-100",
-                  attrs: { src: "/img/holodilnik.jpg", alt: "photo" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "carousel-item" }, [
-                _c("img", {
-                  staticClass: "d-block w-100",
-                  attrs: { src: "/img/pylesos.jpg", alt: "s1" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "carousel-item" }, [
-                _c("img", {
-                  staticClass: "d-block w-100",
-                  attrs: { src: "/img/s2.jpg", alt: "s2" }
-                })
-              ])
-            ])
+            _c(
+              "div",
+              { staticClass: "carousel-inner" },
+              _vm._l(_vm.allGoods, function(good, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "carousel-item",
+                    class: { active: index == 0 }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "d-block w-100",
+                      attrs: { src: "/img/" + good.picture, alt: good.title }
+                    })
+                  ]
+                )
+              }),
+              0
+            )
           ]
         )
       ]),
@@ -38350,7 +38348,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "my-3 row justify-content-md-center" }, [
-      _c("h1", [_vm._v("Our production")])
+      _c("h1", [_vm._v("Наша продукция")])
     ])
   }
 ]
