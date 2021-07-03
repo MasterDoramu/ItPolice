@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\GoodsController;
+use App\Http\Controllers\Api\v1\BasketController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,4 +15,5 @@ use App\Http\Controllers\Api\v1\GoodsController;
 |
 */
 
+Route::resource('basket', BasketController::class);
 Route::resource('goods', GoodsController::class);
