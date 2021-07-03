@@ -38318,14 +38318,14 @@ var render = function() {
               _c("div", { staticClass: "carousel-item active" }, [
                 _c("img", {
                   staticClass: "d-block w-100",
-                  attrs: { src: "/img/photo.png", alt: "photo" }
+                  attrs: { src: "/img/holodilnik.jpg", alt: "photo" }
                 })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "carousel-item" }, [
                 _c("img", {
                   staticClass: "d-block w-100",
-                  attrs: { src: "/img/s1.jpg", alt: "s1" }
+                  attrs: { src: "/img/pylesos.jpg", alt: "s1" }
                 })
               ]),
               _vm._v(" "),

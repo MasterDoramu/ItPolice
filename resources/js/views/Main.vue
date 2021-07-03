@@ -26,17 +26,17 @@
     <div class="col"></div>
     <div class="mt-5 col-6">
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img :src="'/img/photo.png'" class="d-block w-100" alt="photo">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img :src="'/img/holodilnik.jpg'" class="d-block w-100" alt="photo">
+                </div>
+                <div class="carousel-item">
+                <img :src="'/img/pylesos.jpg'" class="d-block w-100" alt="s1">
+                </div>
+                <div class="carousel-item">
+                <img :src="'/img/s2.jpg'" class="d-block w-100" alt="s2">
+                </div>
             </div>
-            <div class="carousel-item">
-            <img :src="'/img/s1.jpg'" class="d-block w-100" alt="s1">
-            </div>
-            <div class="carousel-item">
-            <img :src="'/img/s2.jpg'" class="d-block w-100" alt="s2">
-            </div>
-        </div>
         </div>
     </div>
     <div class="col"></div>
