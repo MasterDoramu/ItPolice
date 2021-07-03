@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 import router from "./router"
+import store from './store'
 
 window.Vue = require('vue').default;
 
@@ -31,5 +32,6 @@ Vue.component('navbar', require('./components/Navbar.vue').default);
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    store
 });
