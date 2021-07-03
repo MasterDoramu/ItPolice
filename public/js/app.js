@@ -1881,8 +1881,14 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         title: "Basket",
         href: "/basket"
-      }]
+      }],
+      toggler: true
     };
+  },
+  methods: {
+    togglerClick: function togglerClick() {
+      this.toggler = !this.toggler;
+    }
   }
 });
 
@@ -37778,12 +37784,28 @@ var render = function() {
               [_vm._v("Shop")]
             ),
             _vm._v(" "),
-            _vm._m(0),
+            _c(
+              "button",
+              {
+                staticClass: "navbar-toggler",
+                attrs: {
+                  type: "button",
+                  "data-bs-toggle": "collapse",
+                  "data-bs-target": "#navbarNav",
+                  "aria-controls": "navbarNav",
+                  "aria-expanded": "false",
+                  "aria-label": "Toggle navigation"
+                },
+                on: { click: _vm.togglerClick }
+              },
+              [_c("span", { staticClass: "navbar-toggler-icon" })]
+            ),
             _vm._v(" "),
             _c(
               "div",
               {
-                staticClass: "collapse navbar-collapse",
+                staticClass: "navbar-collapse",
+                class: { collapse: _vm.toggler },
                 attrs: { id: "navbarNav" }
               },
               [
@@ -37797,10 +37819,7 @@ var render = function() {
                       [
                         _c(
                           "router-link",
-                          {
-                            staticClass: "nav-link ",
-                            attrs: { to: item.href }
-                          },
+                          { staticClass: "nav-link", attrs: { to: item.href } },
                           [_vm._v(_vm._s(item.title))]
                         )
                       ],
@@ -37818,28 +37837,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "navbar-toggler",
-        attrs: {
-          type: "button",
-          "data-bs-toggle": "collapse",
-          "data-bs-target": "#navbarNav",
-          "aria-controls": "navbarNav",
-          "aria-expanded": "false",
-          "aria-label": "Toggle navigation"
-        }
-      },
-      [_c("span", { staticClass: "navbar-toggler-icon" })]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
