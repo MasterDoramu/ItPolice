@@ -10,7 +10,7 @@
 <body>
 
 <div id="app">
-
+<example-component />
 </div>
 
 </div>
