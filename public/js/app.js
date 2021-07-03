@@ -1932,6 +1932,60 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -37965,14 +38019,172 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("div", { staticClass: "row d-flex justify-content-around" }, [
+      _c("div", { staticClass: "card mt-5", staticStyle: { width: "18rem" } }, [
+        _c("img", {
+          staticClass: "card-img-top",
+          attrs: { src: "/img/photo.png", alt: "..." }
+        }),
+        _vm._v(" "),
+        _vm._m(0)
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card mt-5", staticStyle: { width: "18rem" } }, [
+        _c("img", {
+          staticClass: "card-img-top",
+          attrs: { src: "/img/photo.png", alt: "..." }
+        }),
+        _vm._v(" "),
+        _vm._m(1)
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card mt-5", staticStyle: { width: "18rem" } }, [
+        _c("img", {
+          staticClass: "card-img-top",
+          attrs: { src: "/img/photo.png", alt: "..." }
+        }),
+        _vm._v(" "),
+        _vm._m(2)
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card mt-5", staticStyle: { width: "18rem" } }, [
+        _c("img", {
+          staticClass: "card-img-top",
+          attrs: { src: "/img/photo.png", alt: "..." }
+        }),
+        _vm._v(" "),
+        _vm._m(3)
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card mt-5", staticStyle: { width: "18rem" } }, [
+        _c("img", {
+          staticClass: "card-img-top",
+          attrs: { src: "/img/photo.png", alt: "..." }
+        }),
+        _vm._v(" "),
+        _vm._m(4)
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card mt-5", staticStyle: { width: "18rem" } }, [
+        _c("img", {
+          staticClass: "card-img-top",
+          attrs: { src: "/img/photo.png", alt: "..." }
+        }),
+        _vm._v(" "),
+        _vm._m(5)
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Hello world 2")])])
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("Заголовок карточки")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(
+          "Несколько быстрых примеров текста для построения на основе заголовка карточек и составляющих основную часть содержимого карточки."
+        )
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
+        _vm._v("Идти куда-нибудь")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("Заголовок карточки")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(
+          "Несколько быстрых примеров текста для построения на основе заголовка карточек и составляющих основную часть содержимого карточки."
+        )
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
+        _vm._v("Идти куда-нибудь")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("Заголовок карточки")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(
+          "Несколько быстрых примеров текста для построения на основе заголовка карточек и составляющих основную часть содержимого карточки."
+        )
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
+        _vm._v("Идти куда-нибудь")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("Заголовок карточки")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(
+          "Несколько быстрых примеров текста для построения на основе заголовка карточек и составляющих основную часть содержимого карточки."
+        )
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
+        _vm._v("Идти куда-нибудь")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("Заголовок карточки")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(
+          "Несколько быстрых примеров текста для построения на основе заголовка карточек и составляющих основную часть содержимого карточки."
+        )
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
+        _vm._v("Идти куда-нибудь")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-body" }, [
+      _c("h5", { staticClass: "card-title" }, [_vm._v("Заголовок карточки")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "card-text" }, [
+        _vm._v(
+          "Несколько быстрых примеров текста для построения на основе заголовка карточек и составляющих основную часть содержимого карточки."
+        )
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
+        _vm._v("Идти куда-нибудь")
+      ])
+    ])
   }
 ]
 render._withStripped = true
