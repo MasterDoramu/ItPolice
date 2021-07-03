@@ -69,7 +69,7 @@ class BasketController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -103,6 +103,6 @@ class BasketController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Basket::destroy($id);
     }
 }
