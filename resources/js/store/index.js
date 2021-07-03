@@ -15,7 +15,7 @@ export default new Vuex.Store({
   },
   actions: {
         axiosGoods(ctx) {
-            axios.get('http://itpolice/api/goods').then((res) => ctx.commit('updateGoods', res.data))
+            axios.get('/api/goods').then((res) => ctx.commit('updateGoods', res.data))
         }
   },
   getters: {
