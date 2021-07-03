@@ -1953,6 +1953,79 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -37924,14 +37997,216 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "mt-5 col-6" }, [
+        _c(
+          "div",
+          {
+            staticClass: "carousel slide",
+            attrs: { id: "carouselExampleSlidesOnly", "data-ride": "carousel" }
+          },
+          [
+            _c("div", { staticClass: "carousel-inner" }, [
+              _c("div", { staticClass: "carousel-item active" }, [
+                _c("img", {
+                  staticClass: "d-block w-100",
+                  attrs: { src: "/img/photo.png", alt: "photo" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "carousel-item" }, [
+                _c("img", {
+                  staticClass: "d-block w-100",
+                  attrs: { src: "/img/s1.jpg", alt: "s1" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "carousel-item" }, [
+                _c("img", {
+                  staticClass: "d-block w-100",
+                  attrs: { src: "/img/s2.jpg", alt: "s2" }
+                })
+              ])
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col" })
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h1", [_vm._v("Hello worlds")])])
+    return _c("div", { staticClass: "my-3 row justify-content-md-center" }, [
+      _c("h1", [_vm._v("Our production")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "accordion", attrs: { id: "accordionExample" } },
+      [
+        _c("div", { staticClass: "card" }, [
+          _c(
+            "div",
+            { staticClass: "card-header", attrs: { id: "headingOne" } },
+            [
+              _c("h2", { staticClass: "mb-0 " }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: " btn btn-link btn-block text-left",
+                    attrs: {
+                      type: "button",
+                      "data-toggle": "collapse",
+                      "data-target": "#collapseOne",
+                      "aria-expanded": "true",
+                      "aria-controls": "collapseOne"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    Сворачиваемый групповой элемент #1\n                    "
+                    )
+                  ]
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse show",
+              attrs: {
+                id: "collapseOne",
+                "aria-labelledby": "headingOne",
+                "data-parent": "#accordionExample"
+              }
+            },
+            [
+              _c("div", { staticClass: "card-body" }, [
+                _vm._v(
+                  "\n                    Некоторый заполнитель для первой панели аккордеона. Эта панель отображается по умолчанию благодаря классу "
+                ),
+                _c("code", [_vm._v(".show")]),
+                _vm._v(".\n                ")
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card" }, [
+          _c(
+            "div",
+            { staticClass: "card-header", attrs: { id: "headingTwo" } },
+            [
+              _c("h2", { staticClass: "mb-0" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-link btn-block text-left collapsed",
+                    attrs: {
+                      type: "button",
+                      "data-toggle": "collapse",
+                      "data-target": "#collapseTwo",
+                      "aria-expanded": "false",
+                      "aria-controls": "collapseTwo"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n          Сворачиваемый групповой элемент #2\n        "
+                    )
+                  ]
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse",
+              attrs: {
+                id: "collapseTwo",
+                "aria-labelledby": "headingTwo",
+                "data-parent": "#accordionExample"
+              }
+            },
+            [
+              _c("div", { staticClass: "card-body" }, [
+                _vm._v(
+                  "\n        Некоторый заполнитель для второй панели аккордеона. По умолчанию эта панель скрыта.\n      "
+                )
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card" }, [
+          _c(
+            "div",
+            { staticClass: "card-header", attrs: { id: "headingThree" } },
+            [
+              _c("h2", { staticClass: "mb-0" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-link btn-block text-left collapsed",
+                    attrs: {
+                      type: "button",
+                      "data-toggle": "collapse",
+                      "data-target": "#collapseThree",
+                      "aria-expanded": "false",
+                      "aria-controls": "collapseThree"
+                    }
+                  },
+                  [
+                    _vm._v(
+                      "\n          Сворачиваемый групповой элемент #3\n        "
+                    )
+                  ]
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse",
+              attrs: {
+                id: "collapseThree",
+                "aria-labelledby": "headingThree",
+                "data-parent": "#accordionExample"
+              }
+            },
+            [
+              _c("div", { staticClass: "card-body" }, [
+                _vm._v(
+                  "\n        И, наконец, заполнитель для третьей и последней панели аккордеона. По умолчанию эта панель скрыта.\n      "
+                )
+              ])
+            ]
+          )
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
