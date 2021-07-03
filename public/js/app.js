@@ -1873,13 +1873,13 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       links: [{
-        title: "Main",
+        title: "Главная",
         href: "/"
       }, {
-        title: "Goods",
+        title: "Товары",
         href: "/goods"
       }, {
-        title: "Basket",
+        title: "Корзина",
         href: "/basket"
       }],
       toggler: true
