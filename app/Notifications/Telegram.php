@@ -56,16 +56,23 @@ class Telegram extends Notification
         return $arr;
     }
 
+    public function messageOrder()
+    {
+        $str = "Заказ товаров\n\n";
+        foreach ($this->order() as $key=>$item){
+            $str .= "Номер заказа: " . $key . "\n";
+            $str .= "Наименование: " . $item->title . "\n";
+            $str .= "Описание: " . $item->description . "\n";
+            $str .= "Стоимость: " . $item->price . "\n\n";
+        }
+        return $str;
+    }
+
     public function toTelegram($notifiable)
     {
-        // $url = url('http://laravel2/blog');
 
         return TelegramMessage::create()
-            ->content(json_encode($this->order()));
+            ->content($this->messageOrder());
 
-            // (Optional) Blade template for the content.
-            // ->view('notification', ['url' => $url])
-
-            // (Optional) Inline Buttons
     }
 }
