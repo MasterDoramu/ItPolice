@@ -38518,7 +38518,9 @@ var render = function() {
                 _vm._v(_vm._s(good.description))
               ]),
               _vm._v(
-                "\n                " + _vm._s(good.id) + "\n                "
+                "\r\n                " +
+                  _vm._s(good.id) +
+                  "\r\n                "
               ),
               _c("button", { staticClass: "btn btn-primary" }, [
                 _vm._v("Удалить из корзины")
