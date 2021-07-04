@@ -1933,6 +1933,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
@@ -1962,6 +1965,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
 //
 //
 //
@@ -38510,21 +38514,30 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row d-flex justify-content-center mt-5" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { type: "button" },
-          on: {
-            click: function($event) {
-              return _vm.sendTelegram()
-            }
-          }
-        },
-        [_vm._v("Отправить заказ в телеграм")]
-      ),
-      _vm._v("\n        " + _vm._s(_vm.checkTelegram) + "\n    ")
+      !_vm.checkTelegram
+        ? _c(
+            "button",
+            {
+              staticClass: "btn btn-primary",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.sendTelegram()
+                }
+              }
+            },
+            [_vm._v("Отправить заказ в телеграм")]
+          )
+        : _vm._e()
     ]),
+    _vm._v(" "),
+    _vm.checkTelegram
+      ? _c(
+          "div",
+          { staticClass: "alert alert-success mt-5", attrs: { role: "alert" } },
+          [_vm._v("\n        Ваш заказ успешно отправлен\n    ")]
+        )
+      : _vm._e(),
     _vm._v(" "),
     _c(
       "div",
@@ -38550,6 +38563,10 @@ var render = function() {
               _vm._v(" "),
               _c("p", { staticClass: "card-text" }, [
                 _vm._v(_vm._s(good.description))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v("Стоимость: " + _vm._s(good.price) + "р")
               ]),
               _vm._v(" "),
               _c(
@@ -38638,6 +38655,10 @@ var render = function() {
               _vm._v(" "),
               _c("p", { staticClass: "card-text" }, [
                 _vm._v(_vm._s(good.description))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v("Стоимость: " + _vm._s(good.price) + "р")
               ]),
               _vm._v(" "),
               _c(

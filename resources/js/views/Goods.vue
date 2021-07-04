@@ -10,6 +10,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{good.title}}</h5>
                 <p class="card-text">{{good.description}}</p>
+                <p class="card-text">Стоимость: {{good.price}}р</p>
                 <button class="btn btn-primary" @click="statusBasket(good.id)">Добавить в корзину</button>
             </div>
         </div>
