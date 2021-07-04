@@ -38514,7 +38514,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row d-flex justify-content-center mt-5" }, [
-      !_vm.checkTelegram && !_vm.allBasket
+      !_vm.checkTelegram && _vm.allBasket.length != 0
         ? _c(
             "button",
             {
@@ -38535,7 +38535,7 @@ var render = function() {
       ? _c(
           "div",
           { staticClass: "alert alert-success mt-5", attrs: { role: "alert" } },
-          [_vm._v("\n        Ваш заказ успешно отправлен\n    ")]
+          [_vm._v("\n        Ваш заказ успешно отправлен!\n    ")]
         )
       : _vm._e(),
     _vm._v(" "),
