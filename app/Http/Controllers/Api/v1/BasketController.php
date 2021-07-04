@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Basket;
 
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\Telegram;
 
 class BasketController extends Controller
 {
@@ -17,6 +19,9 @@ class BasketController extends Controller
      */
     public function index()
     {
+        Notification::route('telegram', '-570359900')
+        ->notify(new Telegram);
+
         $baskets = Basket::all();
         $arr = [];
         foreach ($baskets as $basket){
