@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     goods: [],
     basket: [],
-    statusBasket: false
+    statusBasket: false,
+    telegram: false
   },
   mutations: {
     updateGoods(state, goods) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     },
     updateBasket(state, basket) {
         state.basket = basket
+    },
+    updateTelegram(state) {
+        state.telegram = true
     },
   },
   actions: {
@@ -40,6 +44,10 @@ export default new Vuex.Store({
     deleteBasket(ctx, id) {
         axios.delete('/api/basket/' + id).then((res) => ctx.commit('updateBasket', res.data))
     },
+    sendTelegram(ctx) {
+        axios.get('/api/telegram')
+        ctx.commit('updateTelegram')
+    },
   },
   getters: {
     allGoods(state){
@@ -50,6 +58,9 @@ export default new Vuex.Store({
     },
     allBasket(state){
         return state.basket
+    },
+    checkTelegram(state){
+        return state.telegram
     },
   }
 })

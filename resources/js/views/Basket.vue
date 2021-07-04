@@ -2,7 +2,8 @@
 <div>
     <h1 class="row d-flex justify-content-center mt-5">Корзина</h1>
     <div class="row d-flex justify-content-center mt-5">
-        <button type="button" class="btn btn-primary">Отправить заказ в телеграм</button>
+        <button type="button" class="btn btn-primary" @click="sendTelegram()">Отправить заказ в телеграм</button>
+        {{checkTelegram}}
     </div>
     <div class="row d-flex justify-content-around">
 
@@ -26,10 +27,10 @@ export default
         this.axiosBasket()
     },
     computed: {
-        ...mapGetters(["allBasket"]),
+        ...mapGetters(["allBasket", "checkTelegram"]),
     },
     methods: {
-        ...mapActions(['axiosBasket', 'deleteBasket']),
+        ...mapActions(['axiosBasket', 'deleteBasket', 'sendTelegram']),
     }
 }
 </script>
