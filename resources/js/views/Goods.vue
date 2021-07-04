@@ -1,8 +1,9 @@
 <template>
 <div >
-            <div class="alert alert-success mt-5" role="alert" v-if="checkStatusBasket">
-                Товар №{{checkStatusBasket.post.good_id}} успешно добавлен в корзину
-            </div>
+    <h1 class="row d-flex justify-content-center mt-5">Товары</h1>
+    <div class="alert alert-success mt-5" role="alert" v-if="checkStatusBasket">
+        Товар №{{checkStatusBasket.post.good_id}} успешно добавлен в корзину
+    </div>
     <div class="row d-flex justify-content-around">
         <div class="card mt-5" style="width: 18rem;" v-for="(good, index) in allGoods" :key="index">
             <img :src="'/img/' + good.picture" class="card-img-top" alt="...">

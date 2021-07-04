@@ -110,6 +110,9 @@ class BasketController extends Controller
      */
     public function destroy($id)
     {
+
         Basket::destroy($id);
+
+
     }
 }
