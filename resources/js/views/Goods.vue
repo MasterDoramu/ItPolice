@@ -31,7 +31,7 @@ export default
     methods: {
         ...mapActions(['axiosGoods', 'insertBasket', 'setFalseBasket']),
         statusBasket($id) {
-            this.insertBasket($id)
+            console.log(this.insertBasket($id))
             setTimeout(() => this.setFalseBasket(), 3000)
         }
     }
