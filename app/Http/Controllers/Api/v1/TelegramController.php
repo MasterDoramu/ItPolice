@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use App\Models\Basket;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\Telegram;
 
-
-class BasketController extends Controller
+class TelegramController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +16,9 @@ class BasketController extends Controller
      */
     public function index()
     {
-        $baskets = Basket::all();
-        $arr = [];
-        foreach ($baskets as $basket){
-            $arr[$basket->id] = Basket::find($basket->id)->good;
-        }
-        return $arr;
+        Notification::route('telegram', '-570359900')
+        ->notify(new Telegram);
+
     }
 
     /**
@@ -43,28 +39,7 @@ class BasketController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make(
-            $request->all(),
-            [
-                'good_id' => ['required'],
-            ]
-        );
-
-        if ($validator->fails()){
-            return [
-                "status" => false,
-                "errors" => $validator->messages()
-            ];
-        }
-
-        $post = Basket::create([
-            "good_id" => $request->good_id,
-        ]);
-
-        return [
-            "status" => true,
-            "post" => $post
-        ];
+        //
     }
 
     /**
@@ -75,7 +50,7 @@ class BasketController extends Controller
      */
     public function show($id)
     {
-
+        //
     }
 
     /**
@@ -98,7 +73,7 @@ class BasketController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        //
     }
 
     /**
@@ -109,9 +84,6 @@ class BasketController extends Controller
      */
     public function destroy($id)
     {
-
-        Basket::destroy($id);
-        return $this->index();
-
+        //
     }
 }

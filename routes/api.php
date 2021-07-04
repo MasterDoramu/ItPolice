@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\GoodsController;
 use App\Http\Controllers\Api\v1\BasketController;
+use App\Http\Controllers\Api\v1\TelegramController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -15,5 +16,6 @@ use App\Http\Controllers\Api\v1\BasketController;
 |
 */
 
+Route::resource('telegram', TelegramController::class);
 Route::resource('basket', BasketController::class);
 Route::resource('goods', GoodsController::class);
