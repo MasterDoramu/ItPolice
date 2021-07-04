@@ -14,33 +14,39 @@ export default new Vuex.Store({
     updateGoods(state, goods) {
         state.goods = goods
     },
-    updateBasket(state, status) {
+    updateBasketStatus(state, status) {
         state.statusBasket = status
     },
     updateBasketFalse(state) {
         state.statusBasket = false
     },
+    updateBasket(state, basket) {
+        state.basket = basket
+    },
   },
   actions: {
-        axiosGoods(ctx) {
-            axios.get('/api/goods').then((res) => ctx.commit('updateGoods', res.data))
-        },
-        axiosBasket(ctx, id) {
-            axios.post('/api/basket', {good_id: id}).then((res) => ctx.commit('updateBasket', res.data))
-        },
-        setFalseBasket(ctx) {
-            ctx.commit('updateBasketFalse')
-        },
+    axiosGoods(ctx) {
+        axios.get('/api/goods').then((res) => ctx.commit('updateGoods', res.data))
+    },
+    insertBasket(ctx, id) {
+        axios.post('/api/basket', {good_id: id}).then((res) => ctx.commit('updateBasketStatus', res.data))
+    },
+    setFalseBasket(ctx) {
+        ctx.commit('updateBasketFalse')
+    },
+    axiosBasket(ctx) {
+        axios.get('/api/basket').then((res) => ctx.commit('updateBasket', res.data))
+    },
   },
   getters: {
-      allGoods(state){
-          return state.goods
-      },
-      checkStatusBasket(state){
+    allGoods(state){
+        return state.goods
+    },
+        checkStatusBasket(state){
         return state.statusBasket
     },
-    //   StatusBasket(state){
-    //     return state.statusBasket
-    // },
+    allBasket(state){
+        return state.basket
+    },
   }
 })

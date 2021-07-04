@@ -1951,18 +1951,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.axiosGoods();
   },
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(["allGoods", "checkStatusBasket"])),
-  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)(['axiosGoods', 'axiosBasket', 'setFalseBasket'])), {}, {
+  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)(['axiosGoods', 'insertBasket', 'setFalseBasket'])), {}, {
     statusBasket: function statusBasket($id) {
       var _this = this;
 
-      this.axiosBasket($id);
+      this.insertBasket($id);
       setTimeout(function () {
         return _this.setFalseBasket();
       }, 3000);
@@ -2210,11 +2209,14 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
     updateGoods: function updateGoods(state, goods) {
       state.goods = goods;
     },
-    updateBasket: function updateBasket(state, status) {
+    updateBasketStatus: function updateBasketStatus(state, status) {
       state.statusBasket = status;
     },
     updateBasketFalse: function updateBasketFalse(state) {
       state.statusBasket = false;
+    },
+    updateBasket: function updateBasket(state, basket) {
+      state.basket = basket;
     }
   },
   actions: {
@@ -2223,15 +2225,20 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
         return ctx.commit('updateGoods', res.data);
       });
     },
-    axiosBasket: function axiosBasket(ctx, id) {
+    insertBasket: function insertBasket(ctx, id) {
       axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/basket', {
         good_id: id
       }).then(function (res) {
-        return ctx.commit('updateBasket', res.data);
+        return ctx.commit('updateBasketStatus', res.data);
       });
     },
     setFalseBasket: function setFalseBasket(ctx) {
       ctx.commit('updateBasketFalse');
+    },
+    axiosBasket: function axiosBasket(ctx) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/basket').then(function (res) {
+        return ctx.commit('updateBasket', res.data);
+      });
     }
   },
   getters: {
@@ -2240,10 +2247,10 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
     },
     checkStatusBasket: function checkStatusBasket(state) {
       return state.statusBasket;
-    } //   StatusBasket(state){
-    //     return state.statusBasket
-    // },
-
+    },
+    allBasket: function allBasket(state) {
+      return state.basket;
+    }
   }
 }));
 

@@ -12,7 +12,6 @@
                 <button class="btn btn-primary" @click="statusBasket(good.id)">Добавить в корзину</button>
             </div>
         </div>
-
     </div>
 </div>
 </template>
@@ -29,9 +28,9 @@ export default
         ...mapGetters(["allGoods", "checkStatusBasket"]),
     },
     methods: {
-        ...mapActions(['axiosGoods', 'axiosBasket', 'setFalseBasket']),
+        ...mapActions(['axiosGoods', 'insertBasket', 'setFalseBasket']),
         statusBasket($id) {
-            this.axiosBasket($id)
+            this.insertBasket($id)
             setTimeout(() => this.setFalseBasket(), 3000)
         }
     }
