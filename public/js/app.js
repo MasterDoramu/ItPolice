@@ -2189,11 +2189,15 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.default);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vuex__WEBPACK_IMPORTED_MODULE_2__.default.Store({
   state: {
-    goods: []
+    goods: [],
+    basket: []
   },
   mutations: {
     updateGoods: function updateGoods(state, goods) {
       state.goods = goods;
+    },
+    updateBasket: function updateBasket(state, basket) {
+      state.basket = basket;
     }
   },
   actions: {
@@ -2201,11 +2205,21 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
       axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/goods').then(function (res) {
         return ctx.commit('updateGoods', res.data);
       });
+    },
+    axiosBasket: function axiosBasket(ctx, id) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/basket', {
+        good_id: id
+      }).then(function (res) {
+        return ctx.commit('updateBasket', res.data);
+      });
     }
   },
   getters: {
     allGoods: function allGoods(state) {
       return state.goods;
+    },
+    allBasket: function allBasket(state) {
+      return state.basket;
     }
   }
 }));
