@@ -1958,7 +1958,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.axiosGoods();
   },
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(["allGoods", "addStatusBasket"])),
-  methods: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)(['axiosGoods', 'axiosBasket']))
+  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)(['axiosGoods', 'axiosBasket', 'setFalseBasket'])), {}, {
+    statusBasket: function statusBasket($id) {
+      var _this = this;
+
+      this.axiosBasket($id);
+      setTimeout(function () {
+        return _this.setFalseBasket();
+      }, 3000);
+    }
+  })
 });
 
 /***/ }),
@@ -2203,6 +2212,9 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
     },
     addBasket: function addBasket(state, status) {
       state.statusBasket = status;
+    },
+    addBasketFalse: function addBasketFalse(state) {
+      state.statusBasket = false;
     }
   },
   actions: {
@@ -2217,6 +2229,9 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
       }).then(function (res) {
         return ctx.commit('addBasket', res.data);
       });
+    },
+    setFalseBasket: function setFalseBasket(ctx) {
+      ctx.commit('addBasketFalse');
     }
   },
   getters: {
@@ -38512,7 +38527,7 @@ var render = function() {
                   staticClass: "btn btn-primary",
                   on: {
                     click: function($event) {
-                      return _vm.axiosBasket(good.id)
+                      return _vm.statusBasket(good.id)
                     }
                   }
                 },

@@ -9,7 +9,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{good.title}}</h5>
                 <p class="card-text">{{good.description}}</p>
-                <button class="btn btn-primary" @click="axiosBasket(good.id)">Добавить в корзину</button>
+                <button class="btn btn-primary" @click="statusBasket(good.id)">Добавить в корзину</button>
             </div>
         </div>
 
@@ -26,10 +26,14 @@ export default
         this.axiosGoods()
     },
     computed: {
-        ...mapGetters(["allGoods", "addStatusBasket"])
+        ...mapGetters(["allGoods", "addStatusBasket"]),
     },
     methods: {
-        ...mapActions(['axiosGoods', 'axiosBasket'])
+        ...mapActions(['axiosGoods', 'axiosBasket', 'setFalseBasket']),
+        statusBasket($id) {
+            this.axiosBasket($id)
+            setTimeout(() => this.setFalseBasket(), 3000)
+        }
     }
 }
 </script>

@@ -16,7 +16,10 @@ export default new Vuex.Store({
     },
     addBasket(state, status) {
         state.statusBasket = status
-    }
+    },
+    addBasketFalse(state) {
+        state.statusBasket = false
+    },
   },
   actions: {
         axiosGoods(ctx) {
@@ -24,6 +27,9 @@ export default new Vuex.Store({
         },
         axiosBasket(ctx, id) {
             axios.post('/api/basket', {good_id: id}).then((res) => ctx.commit('addBasket', res.data))
+        },
+        setFalseBasket(ctx) {
+            ctx.commit('addBasketFalse')
         },
   },
   getters: {
