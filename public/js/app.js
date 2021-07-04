@@ -38514,7 +38514,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row d-flex justify-content-center mt-5" }, [
-      !_vm.checkTelegram
+      !_vm.checkTelegram && !_vm.allBasket
         ? _c(
             "button",
             {

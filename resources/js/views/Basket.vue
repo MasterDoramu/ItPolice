@@ -2,7 +2,7 @@
 <div>
     <h1 class="row d-flex justify-content-center mt-5">Корзина</h1>
     <div class="row d-flex justify-content-center mt-5">
-        <button type="button" class="btn btn-primary" @click="sendTelegram()" v-if="!checkTelegram">Отправить заказ в телеграм</button>
+        <button type="button" class="btn btn-primary" @click="sendTelegram()" v-if="!checkTelegram && !allBasket">Отправить заказ в телеграм</button>
     </div>
     <div class="alert alert-success mt-5" role="alert" v-if="checkTelegram">
         Ваш заказ успешно отправлен
