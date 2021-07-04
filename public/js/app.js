@@ -1948,13 +1948,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.axiosGoods();
   },
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(["allGoods"])),
-  methods: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)(['axiosGoods']))
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(["allGoods", "addStatusBasket"])),
+  methods: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)(['axiosGoods', 'axiosBasket']))
 });
 
 /***/ }),
@@ -2190,14 +2194,15 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new vuex__WEBPACK_IMPORTED_MODULE_2__.default.Store({
   state: {
     goods: [],
-    basket: []
+    basket: [],
+    statusBasket: false
   },
   mutations: {
     updateGoods: function updateGoods(state, goods) {
       state.goods = goods;
     },
-    updateBasket: function updateBasket(state, basket) {
-      state.basket = basket;
+    addBasket: function addBasket(state, status) {
+      state.statusBasket = status;
     }
   },
   actions: {
@@ -2210,7 +2215,7 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
       axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/basket', {
         good_id: id
       }).then(function (res) {
-        return ctx.commit('updateBasket', res.data);
+        return ctx.commit('addBasket', res.data);
       });
     }
   },
@@ -2218,8 +2223,8 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
     allGoods: function allGoods(state) {
       return state.goods;
     },
-    allBasket: function allBasket(state) {
-      return state.basket;
+    addStatusBasket: function addStatusBasket(state) {
+      return state.statusBasket;
     }
   }
 }));
@@ -38461,6 +38466,20 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm.addStatusBasket
+      ? _c(
+          "div",
+          { staticClass: "alert alert-success mt-5", attrs: { role: "alert" } },
+          [
+            _vm._v(
+              "\n                Товар №" +
+                _vm._s(_vm.addStatusBasket.post.good_id) +
+                " успешно добавлен в корзину\n            "
+            )
+          ]
+        )
+      : _vm._e(),
+    _vm._v(" "),
     _c(
       "div",
       { staticClass: "row d-flex justify-content-around" },
@@ -38487,9 +38506,18 @@ var render = function() {
                 _vm._v(_vm._s(good.description))
               ]),
               _vm._v(" "),
-              _c("button", { staticClass: "btn btn-primary" }, [
-                _vm._v("Добавить в корзину")
-              ])
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  on: {
+                    click: function($event) {
+                      return _vm.axiosBasket(good.id)
+                    }
+                  }
+                },
+                [_vm._v("Добавить в корзину")]
+              )
             ])
           ]
         )
