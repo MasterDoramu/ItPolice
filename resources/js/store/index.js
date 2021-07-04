@@ -38,7 +38,7 @@ export default new Vuex.Store({
         axios.get('/api/basket').then((res) => ctx.commit('updateBasket', res.data))
     },
     deleteBasket(ctx, id) {
-        axios.delete('/api/basket/' + id)
+        axios.delete('/api/basket/' + id).then((res) => ctx.commit('updateBasket', res.data))
     },
   },
   getters: {

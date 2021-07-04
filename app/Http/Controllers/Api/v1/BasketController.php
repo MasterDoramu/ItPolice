@@ -18,10 +18,9 @@ class BasketController extends Controller
     public function index()
     {
         $baskets = Basket::all();
-        // return $baskets;
         $arr = [];
         foreach ($baskets as $basket){
-            $arr[] = Basket::find($basket->id)->good;
+            $arr[$basket->id] = Basket::find($basket->id)->good;
         }
         return $arr;
     }
@@ -112,7 +111,7 @@ class BasketController extends Controller
     {
 
         Basket::destroy($id);
-
+        return $this->index();
 
     }
 }

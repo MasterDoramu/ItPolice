@@ -1929,6 +1929,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
@@ -2267,7 +2270,9 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
       });
     },
     deleteBasket: function deleteBasket(ctx, id) {
-      axios__WEBPACK_IMPORTED_MODULE_0___default().delete('/api/basket/' + id);
+      axios__WEBPACK_IMPORTED_MODULE_0___default().delete('/api/basket/' + id).then(function (res) {
+        return ctx.commit('updateBasket', res.data);
+      });
     }
   },
   getters: {
@@ -38492,6 +38497,8 @@ var render = function() {
       _vm._v("Корзина")
     ]),
     _vm._v(" "),
+    _vm._m(0),
+    _vm._v(" "),
     _c(
       "div",
       { staticClass: "row d-flex justify-content-around" },
@@ -38517,12 +38524,19 @@ var render = function() {
               _c("p", { staticClass: "card-text" }, [
                 _vm._v(_vm._s(good.description))
               ]),
-              _vm._v(
-                "\n                " + _vm._s(good.id) + "\n                "
-              ),
-              _c("button", { staticClass: "btn btn-primary" }, [
-                _vm._v("Удалить из корзины")
-              ])
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary bg-danger",
+                  on: {
+                    click: function($event) {
+                      return _vm.deleteBasket(index)
+                    }
+                  }
+                },
+                [_vm._v("Удалить из корзины")]
+              )
             ])
           ]
         )
@@ -38531,7 +38545,24 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "row d-flex justify-content-center mt-5" },
+      [
+        _c(
+          "button",
+          { staticClass: "btn btn-primary", attrs: { type: "button" } },
+          [_vm._v("Отправить заказ в телеграм")]
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
