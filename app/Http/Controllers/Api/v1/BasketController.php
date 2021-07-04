@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Basket;
+use App\Models\Good;
 
 class BasketController extends Controller
 {
@@ -16,7 +17,13 @@ class BasketController extends Controller
      */
     public function index()
     {
-        //
+        $baskets = Basket::all();
+        // return $baskets;
+        $arr = [];
+        foreach ($baskets as $basket){
+            $arr[] = Basket::find($basket->id)->good;
+        }
+        return $arr;
     }
 
     /**

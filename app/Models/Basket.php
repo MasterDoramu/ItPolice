@@ -12,6 +12,6 @@ class Basket extends Model
 
     public function good()
     {
-        return $this->hasMany('App\Good');
+        return $this->belongsTo(Good::class);
     }
 }

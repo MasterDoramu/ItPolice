@@ -16,7 +16,7 @@ export default new Vuex.Store({
   actions: {
         axiosGoods(ctx) {
             axios.get('/api/goods').then((res) => ctx.commit('updateGoods', res.data))
-        }
+        },
   },
   getters: {
       allGoods(state){
