@@ -20,37 +20,37 @@ class GoodSeeder extends Seeder
                     'title' => 'Пылесос',
                     'price' => 10000,
                     'description' => 'Пылесос copleomax 3000',
-                    'picture' => 'ss',
+                    'picture' => 'pylesos.jpg',
                 ],
                 [
                     'title' => 'Мультиварка',
                     'price' => 6000,
-                    'description' => 'скатерть самобранка 21 века',
-                    'picture' => 'ss',
+                    'description' => 'Скатерть самобранка 21 века',
+                    'picture' => 'multi.jpg',
                 ],
                 [
                     'title' => 'Чайник',
                     'price' => 3000,
                     'description' => 'Для любителей чая',
-                    'picture' => 'ss',
+                    'picture' => 'chainik.jpg',
                 ],
                 [
                     'title' => 'Холодильник',
                     'price' => 20000,
                     'description' => 'Сохранит вашу еду на века',
-                    'picture' => 'ss',
+                    'picture' => 'holodilnik.jpg',
                 ],
                 [
                     'title' => 'Тостер',
                     'price' => 4000,
                     'description' => 'Когда обычные булочки надоели',
-                    'picture' => 'ss',
+                    'picture' => 'toster.jpg',
                 ],
                 [
                     'title' => 'Принтер',
                     'price' => 7000,
                     'description' => 'Для курсовых и лабораторных',
-                    'picture' => 'ss',
+                    'picture' => 'printer.jpg',
                 ]
             ]);
     }
