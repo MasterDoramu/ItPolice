@@ -14,10 +14,10 @@ export default new Vuex.Store({
     updateGoods(state, goods) {
         state.goods = goods
     },
-    addBasket(state, status) {
+    updateBasket(state, status) {
         state.statusBasket = status
     },
-    addBasketFalse(state) {
+    updateBasketFalse(state) {
         state.statusBasket = false
     },
   },
@@ -26,18 +26,21 @@ export default new Vuex.Store({
             axios.get('/api/goods').then((res) => ctx.commit('updateGoods', res.data))
         },
         axiosBasket(ctx, id) {
-            axios.post('/api/basket', {good_id: id}).then((res) => ctx.commit('addBasket', res.data))
+            axios.post('/api/basket', {good_id: id}).then((res) => ctx.commit('updateBasket', res.data))
         },
         setFalseBasket(ctx) {
-            ctx.commit('addBasketFalse')
+            ctx.commit('updateBasketFalse')
         },
   },
   getters: {
       allGoods(state){
           return state.goods
       },
-      addStatusBasket(state){
+      checkStatusBasket(state){
         return state.statusBasket
     },
+    //   StatusBasket(state){
+    //     return state.statusBasket
+    // },
   }
 })

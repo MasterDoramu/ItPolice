@@ -1957,7 +1957,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     this.axiosGoods();
   },
-  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(["allGoods", "addStatusBasket"])),
+  computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)(["allGoods", "checkStatusBasket"])),
   methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)(['axiosGoods', 'axiosBasket', 'setFalseBasket'])), {}, {
     statusBasket: function statusBasket($id) {
       var _this = this;
@@ -2210,10 +2210,10 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
     updateGoods: function updateGoods(state, goods) {
       state.goods = goods;
     },
-    addBasket: function addBasket(state, status) {
+    updateBasket: function updateBasket(state, status) {
       state.statusBasket = status;
     },
-    addBasketFalse: function addBasketFalse(state) {
+    updateBasketFalse: function updateBasketFalse(state) {
       state.statusBasket = false;
     }
   },
@@ -2227,20 +2227,23 @@ vue__WEBPACK_IMPORTED_MODULE_1__.default.use(vuex__WEBPACK_IMPORTED_MODULE_2__.d
       axios__WEBPACK_IMPORTED_MODULE_0___default().post('/api/basket', {
         good_id: id
       }).then(function (res) {
-        return ctx.commit('addBasket', res.data);
+        return ctx.commit('updateBasket', res.data);
       });
     },
     setFalseBasket: function setFalseBasket(ctx) {
-      ctx.commit('addBasketFalse');
+      ctx.commit('updateBasketFalse');
     }
   },
   getters: {
     allGoods: function allGoods(state) {
       return state.goods;
     },
-    addStatusBasket: function addStatusBasket(state) {
+    checkStatusBasket: function checkStatusBasket(state) {
       return state.statusBasket;
-    }
+    } //   StatusBasket(state){
+    //     return state.statusBasket
+    // },
+
   }
 }));
 
@@ -38481,14 +38484,14 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm.addStatusBasket
+    _vm.checkStatusBasket
       ? _c(
           "div",
           { staticClass: "alert alert-success mt-5", attrs: { role: "alert" } },
           [
             _vm._v(
               "\n                Товар №" +
-                _vm._s(_vm.addStatusBasket.post.good_id) +
+                _vm._s(_vm.checkStatusBasket.post.good_id) +
                 " успешно добавлен в корзину\n            "
             )
           ]
