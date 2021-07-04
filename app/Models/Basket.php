@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Basket extends Model
 {
     use HasFactory;
-    protected $fillable = ['good_id'];
+
 
     public function good()
     {
-        return $this->belongsTo(Good::class);
+        return $this->hasMany(Good::class);
     }
 }

@@ -44,28 +44,7 @@ class BasketController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make(
-            $request->all(),
-            [
-                'good_id' => ['required']
-            ]
-        );
 
-        if ($validator->fails()){
-            return [
-                "status" => false,
-                "errors" => $validator->messages()
-            ];
-        }
-
-        $post = Basket::create([
-            "good_id" => $request->good_id
-        ]);
-
-        return [
-            "status" => true,
-            "post" => $post
-        ];
     }
 
     /**
@@ -99,7 +78,28 @@ class BasketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'basket_id' => ['required']
+            ]
+        );
+
+        if ($validator->fails()){
+            return [
+                "status" => false,
+                "errors" => $validator->messages()
+            ];
+        }
+
+        $post = Good::where(['id' => $id])->update([
+            "basket_id" => $request->basket_id
+        ]);
+
+        return [
+            "status" => true,
+            "post" => $post
+        ];
     }
 
     /**
